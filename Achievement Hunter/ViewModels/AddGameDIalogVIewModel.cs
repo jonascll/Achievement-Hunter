@@ -4,6 +4,7 @@ using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Achievement_Hunter.Classes;
 using System.Threading.Tasks;
+using System;
 namespace Achievement_Hunter.ViewModels;
 
 public partial class AddGameDialogViewModel : ViewModelBase
@@ -30,7 +31,12 @@ public partial class AddGameDialogViewModel : ViewModelBase
     public async Task Add()
     {
         Game addedGame = new Game(GameName, AchievementsUrl);
+
         await addedGame.InitializeAsync();
+
+
+        await GameListManager.AddGameToList(addedGame);
+
         _dialog.Close(new GameDialogResponse(true, addedGame));
     }
 }

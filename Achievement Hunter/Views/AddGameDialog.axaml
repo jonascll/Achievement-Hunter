@@ -6,11 +6,12 @@
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
   xmlns:vm="using:Achievement_Hunter.ViewModels"
   Width="700"
-  Height="180"
+  Height="600"
   x:DataType="vm:AddGameDialogViewModel"
   CanResize="False"
   mc:Ignorable="d">
-  <Grid Margin="10" RowDefinitions="Auto, *">
+
+  <Grid Margin="10" RowDefinitions="Auto, Auto, *, Auto">
     <Grid
       Grid.Row="0"
       Margin="10"
@@ -41,8 +42,11 @@
         PlaceholderText="Achievements Link"
         Text="{Binding AchievementsUrl}" />
     </Grid>
+
+    <ListBox Grid.Row="2" />
+
     <Grid
-      Grid.Row="2"
+      Grid.Row="3"
       Margin="10"
       HorizontalAlignment="Center"
       VerticalAlignment="Bottom"

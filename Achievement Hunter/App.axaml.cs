@@ -6,6 +6,7 @@ using System.Linq;
 using Avalonia.Markup.Xaml;
 using Achievement_Hunter.ViewModels;
 using Achievement_Hunter.Views;
+using Achievement_Hunter.Classes;
 
 namespace Achievement_Hunter;
 

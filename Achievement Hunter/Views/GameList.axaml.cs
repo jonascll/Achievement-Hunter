@@ -39,11 +39,8 @@ public partial class GameList : UserControl
                 GameDialogResponse? result = await dialog.ShowDialog<GameDialogResponse?>(window);
                 if (result?.ResponseObject is Game gameObject && result.Succeeded)
                 {
-                    if (gameObject.Achievements.Count != 0)
-                    {
-                        GameListViewModel context = (GameListViewModel)DataContext;
-                        context?.WriteGameDataToJson(gameObject);
-                    }
+
+
                 }
 
 
