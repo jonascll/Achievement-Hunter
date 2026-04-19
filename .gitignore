@@ -54,3 +54,19 @@ TestResult.xml
 nunit-*.xml
 
 appsettings.json
+
+# Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+build/
+
+# .NET Core/Standard/5+ output
+bin/
+obj/
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
