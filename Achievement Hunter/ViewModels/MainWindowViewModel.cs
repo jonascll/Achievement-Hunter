@@ -1,4 +1,5 @@
-﻿using Achievement_Hunter.Classes;
+﻿using System.Threading.Tasks;
+using Achievement_Hunter.Classes;
 using Avalonia;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
@@ -35,4 +36,6 @@ public partial class MainWindowViewModel : ViewModelBase
         WindowHeight = 450;
         CanResize = true;
     }
+
+
 }

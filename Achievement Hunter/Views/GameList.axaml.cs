@@ -71,6 +71,20 @@ public partial class GameList : UserControl
         }
     }
 
+    private void DeleteGamePressed(object? sender, PointerPressedEventArgs e)
+    {
+        PointerUpdateKind pointerUpdateKind = e.GetCurrentPoint(this).Properties.PointerUpdateKind;
+        if (pointerUpdateKind == PointerUpdateKind.LeftButtonPressed)
+        {
+            if (sender is Control control && control.DataContext is Game item)
+            {
+                if (DataContext is GameListViewModel viewModel)
+                {
 
+                    viewModel.DeleteGame(item);
+                }
+            }
+        }
+    }
 
 }

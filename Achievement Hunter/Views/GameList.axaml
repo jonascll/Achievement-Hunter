@@ -16,6 +16,13 @@
             <Setter Property="Source" Value="avares://Achievement_Hunter/Assets/plus-hover.png" />
             <Setter Property="Cursor" Value="Hand" />
         </Style>
+        <Style Selector="Image.hoverTrashcan">
+            <Setter Property="Source" Value="avares://Achievement_Hunter/Assets/trashcan.png" />
+        </Style>
+        <Style Selector="Image.hoverTrashcan:pointerover">
+            <Setter Property="Source" Value="avares://Achievement_Hunter/Assets/trashcan-hover.png" />
+            <Setter Property="Cursor" Value="Hand" />
+        </Style>
     </UserControl.Styles>
     <Grid Margin="10" RowDefinitions="Auto, *">
         <Grid Grid.Row="0" ColumnDefinitions="*, Auto">
@@ -41,7 +48,7 @@
                 PointerPressed="AddNewGame" />
 
 
-            <!--  TODO: add remove button to items in list  -->
+
 
 
         </Grid>
@@ -55,9 +62,24 @@
 
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel>
-                        <TextBlock HorizontalAlignment="Center" Text="{Binding name}" />
-                    </StackPanel>
+                    <Grid Background="Transparent" ColumnDefinitions="40, *, 40">
+
+                        <Rectangle Grid.Column="0" Width="40" />
+
+                        <TextBlock
+                            Grid.Column="1"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Text="{Binding name}" />
+
+                        <Image
+                            Grid.Column="2"
+                            Width="25"
+                            Height="25"
+                            HorizontalAlignment="Right"
+                            Classes="hoverTrashcan"
+                            PointerPressed="DeleteGamePressed" />
+                    </Grid>
 
                 </DataTemplate>
             </ListBox.ItemTemplate>

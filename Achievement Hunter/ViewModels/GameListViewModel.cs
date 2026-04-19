@@ -51,4 +51,12 @@ public partial class GameListViewModel : ViewModelBase
         }
     }
 
+    public void DeleteGame(Game game)
+    {
+        GameListManager.DeleteGameFromList(game);
+        GameName = "";
+        FilterList("");
+    }
+
+
 }

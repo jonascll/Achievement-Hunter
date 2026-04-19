@@ -97,5 +97,16 @@ static class GameListManager
         }
         return copyGame;
     }
+
+    public static bool DeleteGameFromList(Game game)
+    {
+        if (listOfGames.Contains(game))
+        {
+            listOfGames.Remove(game);
+            UpdateJson();
+            return true;
+        }
+        return false;
+    }
 }
 
