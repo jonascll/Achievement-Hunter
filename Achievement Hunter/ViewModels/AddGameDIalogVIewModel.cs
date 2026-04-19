@@ -24,8 +24,11 @@ public partial class AddGameDialogViewModel : ViewModelBase
     [RelayCommand]
     public async Task Cancel()
     {
+        if (!Adding)
+        {
+            _dialog.Close(new GameDialogResponse(false, null));
+        }
 
-        _dialog.Close(new GameDialogResponse(false, null));
 
     }
     [RelayCommand]
